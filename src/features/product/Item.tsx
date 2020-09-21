@@ -1,17 +1,20 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { CartItem, ItemProps } from '../../global';
 import { addItem } from "../cart/cartSlice";
 var uniqid = require('uniqid');
 
 
-export const Item = ({name,price,pic,id}) => {
+export const Item = ({name,price,pic,id}:ItemProps) => {
 
   const dispatch = useDispatch();
-  const cart = useSelector(state => state.cart);
-  const cartItemSubmitEventHandler = (e, cartItem) => {
+  const cart = useSelector(state => state);
+  const cartItemSubmitEventHandler = (e:any, cartItem:CartItem) => {
       e.preventDefault();
       //console.log(cartItem)
       dispatch(addItem(cartItem));
+      //console.log(cart)
+
   }
 
   // const addToCartFunc = () => {
@@ -20,7 +23,7 @@ export const Item = ({name,price,pic,id}) => {
   //   // setCart(currentState => [...currentState, newItem]);
   // }
   return (
-    <div className='tshirt-box' key={`${id}:${name}`}>
+    <div className='tshirt-box'>
       <img src={pic} alt='shoes' className='product-pic' />
       <h2>{name}</h2>
       <h4>{price}</h4>

@@ -3,13 +3,17 @@ export interface ProductItem {
     name: string
     price: number
     pic: string
-    cart?: any
 }
 
 export interface CartItem {
     id: string
     name: string
     price: number
-    cartId?: string
-    cart: any
+    cartId: string
+}
+export interface ItemProps {
+    name: string
+    price: number
+    pic: string
+    id: string
 }
