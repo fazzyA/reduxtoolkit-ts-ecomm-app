@@ -68,10 +68,11 @@ text-align: center;
   nav ul li{
     display: inline-block;
 
+
   }
   nav ul li a{
     font-size: 18px;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 5px 0px 20px;
     color: #7D7D7D;
     text-transform: uppercase;
     line-height: 15px;
